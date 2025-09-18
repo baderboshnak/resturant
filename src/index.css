@@ -1,0 +1,129 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Restaurant Design System - Warm, elegant colors for fine dining experience */
+
+@layer base {
+  :root {
+    /* Base colors - warm cream background */
+    --background: 42 15% 97%;
+    --foreground: 25 25% 15%;
+
+    /* Card colors - slight warm tint */
+    --card: 40 20% 99%;
+    --card-foreground: 25 25% 15%;
+
+    /* Popover colors */
+    --popover: 40 20% 99%;
+    --popover-foreground: 25 25% 15%;
+
+    /* Primary - rich brown/gold */
+    --primary: 25 60% 25%;
+    --primary-foreground: 42 50% 95%;
+    --primary-glow: 35 70% 45%;
+
+    /* Secondary - warm gold */
+    --secondary: 45 85% 85%;
+    --secondary-foreground: 25 60% 25%;
+
+    /* Muted tones */
+    --muted: 40 15% 92%;
+    --muted-foreground: 25 15% 45%;
+
+    /* Accent - warm orange */
+    --accent: 35 75% 60%;
+    --accent-foreground: 42 50% 95%;
+
+    /* Destructive */
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 42 50% 95%;
+
+    /* Borders and inputs */
+    --border: 40 20% 88%;
+    --input: 40 20% 88%;
+    --ring: 35 70% 45%;
+
+    /* Border radius */
+    --radius: 0.75rem;
+
+    /* Restaurant-specific tokens */
+    --hero-bg: 25 30% 12%;
+    --hero-text: 42 50% 95%;
+    --warm-gold: 45 85% 70%;
+    --deep-brown: 25 40% 20%;
+    --cream: 42 30% 95%;
+    
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(25 30% 12%), hsl(25 40% 18%));
+    --gradient-warm: linear-gradient(135deg, hsl(35 70% 45%), hsl(45 85% 70%));
+    --gradient-subtle: linear-gradient(180deg, hsl(42 15% 97%), hsl(40 20% 94%));
+    
+    /* Shadows */
+    --shadow-warm: 0 10px 40px -10px hsl(25 40% 20% / 0.3);
+    --shadow-elegant: 0 20px 60px -15px hsl(35 60% 30% / 0.2);
+    
+    /* Animations */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  .dark {
+    --background: 25 30% 12%;
+    --foreground: 42 50% 95%;
+
+    --card: 25 35% 15%;
+    --card-foreground: 42 50% 95%;
+
+    --popover: 25 35% 15%;
+    --popover-foreground: 42 50% 95%;
+
+    --primary: 42 50% 95%;
+    --primary-foreground: 25 60% 25%;
+
+    --secondary: 25 40% 20%;
+    --secondary-foreground: 42 50% 95%;
+
+    --muted: 25 35% 18%;
+    --muted-foreground: 40 15% 65%;
+
+    --accent: 35 75% 60%;
+    --accent-foreground: 25 30% 12%;
+
+    --destructive: 0 65% 45%;
+    --destructive-foreground: 42 50% 95%;
+
+    --border: 25 35% 20%;
+    --input: 25 35% 20%;
+    --ring: 35 70% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    direction: rtl;
+    font-family: 'Assistant', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Assistant', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Frank Ruhl Libre', Georgia, serif;
+    font-weight: 500;
+  }
+
+  .font-serif {
+    font-family: 'Frank Ruhl Libre', Georgia, serif;
+  }
+
+  .font-sans {
+    font-family: 'Assistant', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+}
