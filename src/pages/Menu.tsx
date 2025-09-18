@@ -4,11 +4,20 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { Star, Leaf, Flame } from "lucide-react";
 
-// ⬅️ ודא שיש לך את הקבצים ב: public/images/...
-// לדוגמה: public/images/onion-soup.jpg, salmon-carpaccio.jpg, burrata-salad.jpg, וכו'.
+// import images (from src/assets)
+import food1 from "@/assets/food-1.jpg";
+import food2 from "@/assets/food-2.jpg";
+import food3 from "@/assets/food-3.jpg";
+import food4 from "@/assets/food-4.jpg";
+import food5 from "@/assets/food-5.jpg";
+import food6 from "@/assets/food-6.jpg";
+import food8 from "@/assets/food-8.jpg";
+import food9 from "@/assets/food-9.jpg";
+import food10 from "@/assets/food-10.jpg";
+import food11 from "@/assets/food-11.jpg";
 
 const Menu = () => {
-  // משתמשים ב-PATH מקומי (מתיקיית public/images), לא בקישורי URL
+  // using imported images instead of public paths
   const menuCategories = [
     {
       title: "מנות ראשונות",
@@ -19,7 +28,7 @@ const Menu = () => {
           description: "מרק בצל עשיר עם גבינת גרויאר וקרוטונים",
           tags: ["vegetarian"],
           rating: 4.8,
-          image: "/src/assets/food-4.jpg",
+          image: food4,
         },
         {
           name: "קרפצ'יו סלמון",
@@ -27,7 +36,7 @@ const Menu = () => {
           description: "פרוסות סלמון דקות עם קפרים, לימון ואבוקדו",
           tags: ["signature"],
           rating: 4.9,
-          image: "/src/assets/food-5.jpg",
+          image: food5,
         },
         {
           name: "סלט בורטה",
@@ -35,7 +44,7 @@ const Menu = () => {
           description: "גבינת בורטה טרייה עם עגבניות שרי וריחן",
           tags: ["vegetarian"],
           rating: 4.7,
-          image: "/src/assets/food-6.jpg",
+          image: food6,
         },
       ],
     },
@@ -48,7 +57,7 @@ const Menu = () => {
           description: "פילה בקר איכותי עם רוטב פטריות ותוספות לבחירה",
           tags: ["signature", "spicy"],
           rating: 4.9,
-          image: "src/assets/food-1.jpg",
+          image: food1,
         },
         {
           name: "דג ברוטב לימון",
@@ -56,7 +65,7 @@ const Menu = () => {
           description: "פילה דג טרי של היום עם רוטב לימון וירקות עונתיים",
           tags: [],
           rating: 4.8,
-          image: "src/assets/food-2.jpg",
+          image: food2,
         },
         {
           name: "ריזוטו פטריות",
@@ -64,7 +73,7 @@ const Menu = () => {
           description: "ריזוטו קרמי עם תערובת פטריות וגבינת פרמזן",
           tags: ["vegetarian"],
           rating: 4.6,
-          image: "src/assets/food-8.jpg",
+          image: food8,
         },
         {
           name: "כבש מבושל",
@@ -72,7 +81,7 @@ const Menu = () => {
           description: "כתף כבש מבושלת במרק ירקות עם עשבי תיבול",
           tags: [],
           rating: 4.7,
-          image: "src/assets/food-1.jpg",
+          image: food1, // reusing food1 (or swap to another as you like)
         },
       ],
     },
@@ -85,7 +94,7 @@ const Menu = () => {
           description: "הטירמיסו המפורסם שלנו עם משקה קפה איטלקי",
           tags: ["signature"],
           rating: 4.9,
-          image: "src/assets/food-3.jpg",
+          image: food3,
         },
         {
           name: "קרם ברולה",
@@ -93,7 +102,7 @@ const Menu = () => {
           description: "קרם וניל עשיר עם שכבת סוכר קרמלי",
           tags: [],
           rating: 4.8,
-          image: "src/assets/food-9.jpg",
+          image: food9,
         },
         {
           name: "מוס שוקולד",
@@ -101,21 +110,20 @@ const Menu = () => {
           description: "מוס שוקולד בלגי עם פירות יער",
           tags: [],
           rating: 4.7,
-          image: "src/assets/food-10.jpg",
+          image: food10,
         },
       ],
     },
     {
       title: "משקאות",
       items: [
-        
         {
           name: "קוקטייל בית",
           price: "35",
           description: "קוקטייל מיוחד של הבית עם מרכיבים טריים",
           tags: ["signature"],
           rating: 4.8,
-          image: "src/assets/food-11.jpg",
+          image: food11,
         },
       ],
     },
@@ -187,8 +195,7 @@ const Menu = () => {
                     className="hover:shadow-md transition-all duration-300 overflow-hidden"
                   >
                     <CardContent className="p-0">
-                      {/* תמונה מקומית מ-public */}
-                      {item.image && item.image.trim() !== "" && (
+                      {item.image && (
                         <img
                           src={item.image}
                           alt={item.name}
